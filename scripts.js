@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Simula el login y redirige según el rol
     const loginForm = document.getElementById('loginForm');
+    const addPatientBtn = document.getElementById('addPatientBtn');
+    const addPatientModal = document.getElementById('addPatientModal');
+    const closeBtn = document.querySelectorAll('.close-btn');
+    const addPatientForm = document.getElementById('addPatientForm');
+    const patientsListAdmin = document.getElementById('patientsListAdmin');
+    const addPatientBtnWorker = document.getElementById('addPatientBtnWorker');
+    const addPatientModalWorker = document.getElementById('addPatientModalWorker');
+    const addPatientFormWorker = document.getElementById('addPatientFormWorker');
+    const patientsListWorker = document.getElementById('patientsListWorker');
+
     if (loginForm) {
         loginForm.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -16,21 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mostrar el modal para agregar paciente
-    const addPatientBtn = document.getElementById('addPatientBtn');
-    const addPatientModal = document.getElementById('addPatientModal');
-    const closeBtn = document.querySelector('.close-btn');
-    const addPatientForm = document.getElementById('addPatientForm');
-
     if (addPatientBtn) {
         addPatientBtn.addEventListener('click', () => {
             addPatientModal.style.display = 'flex';
-        });
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            addPatientModal.style.display = 'none';
         });
     }
 
@@ -39,31 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const patientName = document.getElementById('patientName').value;
             const patientId = document.getElementById('patientId').value;
+            const patientObservations = document.getElementById('patientObservations').value;
             const patientDocs = document.getElementById('patientDocs').files;
-            // Aquí se debe guardar la información en una base de datos o en el almacenamiento del servidor
-            console.log('Paciente:', patientName, patientId, patientDocs);
+            // Aquí se debería guardar la información en una base de datos
+            console.log('Paciente Admin:', patientName, patientId, patientObservations, patientDocs);
             addPatientModal.style.display = 'none';
         });
     }
 
-    // Simula la carga de pacientes
-    const patientsListAdmin = document.getElementById('patientsList');
-    if (patientsListAdmin) {
-        patientsListAdmin.innerHTML = `
-            <h2>Pacientes Registrados</h2>
-            <ul>
-                <li>Paciente 1</li>
-                <li>Paciente 2</li>
-            </ul>
-        `;
+    if (addPatientBtnWorker) {
+        addPatientBtnWorker.addEventListener('click', () => {
+            addPatientModalWorker.style.display = 'flex';
+        });
     }
 
-    const patientsListWorker = document.getElementById('patientsListWorker');
-    if (patientsListWorker) {
-        patientsListWorker.innerHTML = `
-            <h2>Pacientes Asignados</h2>
-            <ul>
-                <li>Paciente A</li>
+    if (addPatientFormWorker) {
+        addPatientFormWorker.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const patientNameWorker = document.getElementById('patientNameWorker').value;
+            const patientIdWorker = document.getElementById('patientIdWorker').value;
+            const patientObservationsWorker = document.getElementById('patientObservationsWorker').value;
+            const patientDocsWorker = document.getElementById('patientDocsWorker').files;
+            // Aquí se debería guardar la información en una base de datos
+            console.log('Paciente Worker:', patientNameWorker, patientIdWorker, patientObservationsWorker, patientDocsWorker);
+            addPatientModalWorker.style
+
                 <li>Paciente B</li>
             </ul>
         `;
