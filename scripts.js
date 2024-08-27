@@ -51,3 +51,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (addPatientFormWorker) {
+        addPatientFormWorker.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const patientNameWorker = document.getElementById('patientNameWorker').value;
+            const patientIdWorker = document.getElementById('patientIdWorker').value;
+            const patientObservationsWorker = document.getElementById('patientObservationsWorker').value;
+            const patientDocsWorker = document.getElementById('patientDocsWorker').files;
+            // Aquí se debería guardar la información en una base de datos
+            console.log('Paciente Worker:', patientNameWorker, patientIdWorker, patientObservationsWorker, patientDocsWorker);
+            addPatientModalWorker.style.display = 'none';
+        });
+    }
+
+    logoutBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            window.location.href = 'index.html'; // Redirige al login
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.modal').style.display = 'none';
+        });
+    });
+
+    // Simular la carga de pacientes (se debería implementar en un backend real)
+    if (patientsListAdmin) {
+        patientsListAdmin.innerHTML = `
+            <h2>Pacientes Registrados</h2>
+            <ul>
+                <li>Paciente 1</li>
+                <li>Paciente 2</li>
+            </ul>
+        `;
+    }
+
+    if (patientsListWorker) {
+        patientsListWorker.innerHTML = `
+            <h2>Pacientes Asignados</h2>
+            <ul>
+                <li>Paciente A</li>
+                <li>Paciente B</li>
+            </ul>
+        `;
+    }
+});
+
