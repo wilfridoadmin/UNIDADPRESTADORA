@@ -2,13 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const addPatientBtn = document.getElementById('addPatientBtn');
     const addPatientModal = document.getElementById('addPatientModal');
-    const closeBtn = document.querySelectorAll('.close-btn');
     const addPatientForm = document.getElementById('addPatientForm');
     const patientsListAdmin = document.getElementById('patientsListAdmin');
     const addPatientBtnWorker = document.getElementById('addPatientBtnWorker');
     const addPatientModalWorker = document.getElementById('addPatientModalWorker');
     const addPatientFormWorker = document.getElementById('addPatientFormWorker');
     const patientsListWorker = document.getElementById('patientsListWorker');
+    const logoutBtns = document.querySelectorAll('#logoutBtn');
+    const closeBtns = document.querySelectorAll('.close-btn');
 
     if (loginForm) {
         loginForm.addEventListener('submit', (event) => {
@@ -50,19 +51,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (addPatientFormWorker) {
-        addPatientFormWorker.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const patientNameWorker = document.getElementById('patientNameWorker').value;
-            const patientIdWorker = document.getElementById('patientIdWorker').value;
-            const patientObservationsWorker = document.getElementById('patientObservationsWorker').value;
-            const patientDocsWorker = document.getElementById('patientDocsWorker').files;
-            // Aquí se debería guardar la información en una base de datos
-            console.log('Paciente Worker:', patientNameWorker, patientIdWorker, patientObservationsWorker, patientDocsWorker);
-            addPatientModalWorker.style
-
-                <li>Paciente B</li>
-            </ul>
-        `;
-    }
-});
