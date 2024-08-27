@@ -62,4 +62,30 @@ input[type="file"] {
     margin: 10px 0;
     padding: 10px;
     border-radius: 4px;
+    position: relative;
+}
+
+.edit-btn, .delete-btn, .print-btn {
+    background: #fff;
+    color: #2a6f2b;
+    border: 1px solid #2a6f2b;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    position: absolute;
+    top: 10px;
+}
+
+.edit-btn {
+    left: 10px;
+}
+
+.delete-btn {
+    left: 80px;
+}
+
+.print-btn {
+    left: 150px;
 }
