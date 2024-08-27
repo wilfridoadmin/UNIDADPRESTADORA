@@ -8,22 +8,27 @@
 </head>
 <body>
     <div class="dashboard-container">
-        <h1>Panel de Trabajador</h1>
-        <div id="patientsListWorker"></div>
-        <button id="addPatientBtnWorker">Agregar Paciente</button>
-        <div id="addPatientModalWorker" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2>Agregar Nuevo Paciente</h2>
-                <form id="addPatientFormWorker">
-                    <input type="text" id="patientNameWorker" placeholder="Nombre Completo" required>
-                    <input type="text" id="patientIdWorker" placeholder="ID del Paciente" required>
-                    <textarea id="patientObservationsWorker" placeholder="Observaciones" required></textarea>
-                    <input type="file" id="patientDocsWorker" multiple>
-                    <button type="submit">Guardar</button>
-                </form>
+        <header>
+            <h1>Panel de Trabajador</h1>
+            <button id="logoutBtn">Cerrar Sesión</button>
+        </header>
+        <main>
+            <div id="patientsListWorker"></div>
+            <button id="addPatientBtnWorker">Agregar Paciente</button>
+            <div id="addPatientModalWorker" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Agregar Nuevo Paciente</h2>
+                    <form id="addPatientFormWorker">
+                        <input type="text" id="patientNameWorker" placeholder="Nombre Completo" required>
+                        <input type="text" id="patientIdWorker" placeholder="ID del Paciente" required>
+                        <textarea id="patientObservationsWorker" placeholder="Observaciones" required></textarea>
+                        <input type="file" id="patientDocsWorker" multiple>
+                        <button type="submit">Guardar</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
     <script src="scripts.js"></script>
 </body>
