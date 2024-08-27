@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS - Sistema de Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form" class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <form id="login" onsubmit="login(event)">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Entrar</button>
+                <div id="login-error" class="error-message"></div>
+            </form>
+        </div>
+        <div id="dashboard" class="form-container" style="display: none;">
+            <button onclick="logout()">Cerrar Sesión</button>
+            <h2>Panel de Control</h2>
+            <div id="patient-form">
+                <h3>Agregar Paciente</h3>
+                <form id="add-patient" onsubmit="addPatient(event)">
+                    <input type="text" id="patient-name" placeholder="Nombre del Paciente" required>
+                    <input type="text" id="patient-id" placeholder="ID del Paciente" required>
+                    <textarea id="patient-observations" placeholder="Observaciones"></textarea>
+                    <input type="file" id="patient-documents" multiple>
+                    <button type="submit">Agregar Paciente</button>
+                </form>
+            </div>
+            <h3>Pacientes</h3>
+            <ul id="patient-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
