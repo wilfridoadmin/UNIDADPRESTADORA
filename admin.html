@@ -10,7 +10,7 @@
     <div class="dashboard-container">
         <h1>Panel de Administración</h1>
         <button id="addPatientBtn">Agregar Paciente</button>
-        <div id="patientsList"></div>
+        <div id="patientsListAdmin"></div>
     </div>
     <div id="addPatientModal" class="modal">
         <div class="modal-content">
@@ -19,6 +19,7 @@
             <form id="addPatientForm">
                 <input type="text" id="patientName" placeholder="Nombre Completo" required>
                 <input type="text" id="patientId" placeholder="ID del Paciente" required>
+                <textarea id="patientObservations" placeholder="Observaciones" required></textarea>
                 <input type="file" id="patientDocs" multiple>
                 <button type="submit">Guardar</button>
             </form>
@@ -27,3 +28,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
